@@ -7,6 +7,12 @@ plugins {
 group = 'com.polarbookshop'
 version = '0.0.1-SNAPSHOT'
 
+configurations {
+	compileJava {
+		extendsFrom annotationProcessor
+	}
+}
+
 java {
 	sourceCompatibility = '17'
 }
@@ -16,6 +22,7 @@ repositories {
 }
 
 dependencies {
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.yaml:snakeyaml:2.0'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
